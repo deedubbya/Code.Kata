@@ -1,0 +1,43 @@
+<h1>Upload Driver Data</h1>
+
+<input type="file" class="file-input"
+       onclick="this.value = null"
+       [accept]="requiredFileType"
+       (change)="onFileSelected($event)" #fileUpload>
+
+<div class="file-upload">
+
+  {{fileName || "No file uploaded yet."}}
+
+  <button mat-mini-fab color="primary" class="upload-btn"
+          (click)="fileUpload.click()">
+    <mat-icon>attach_file</mat-icon>
+  </button>
+
+</div>
+
+<div class="progress" [style.display]="isUploading ? 'block' : 'none'">
+
+  <mat-progress-bar class="progress-bar" mode="determinate"
+                    [value]="uploadProgress" *ngIf="uploadProgress">
+
+  </mat-progress-bar>
+
+  <mat-icon class="cancel-upload" (click)="cancelUpload()"
+            *ngIf="uploadProgress">delete_forever</mat-icon>
+
+</div>
+
+<div class="upload-status" [style.display]="isUploaded ? 'block' : 'none'">
+  <div ng-if="uploadResponse">
+    <h2>Database Updates</h2>
+    <ul>
+      <li *ngFor="let cmd of uploadResponse.commands; let i = index"
+          [class.text-success]="cmd.successful"
+          [class.text-danger]="!cmd.successful">
+        {{cmd.command}} {{cmd.values.join(' ')}}
+        <span *ngIf="cmd?.errorMessage">({{cmd.errorMessage}})</span>
+      </li>
+    </ul>
+  </div>
+</div>

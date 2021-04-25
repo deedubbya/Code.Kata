@@ -1,0 +1,18 @@
+<h1 id="tableLabel">Driver Reports</h1>
+<table mat-table [dataSource]="reportResponse" class="mat-elevation-z8" matSort style="width:100%;">
+  <ng-container matColumnDef="driver">
+    <th mat-header-cell *matHeaderCellDef>Driver</th>
+    <td mat-cell *matCellDef="let element"> {{element.driverName}} </td>
+  </ng-container>
+  <ng-container matColumnDef="miles">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Total Miles</th>
+    <td mat-cell *matCellDef="let element"> {{element.miles}} </td>
+  </ng-container>
+  <ng-container matColumnDef="milesMph">
+    <th mat-header-cell *matHeaderCellDef>Average Miles Per Hour</th>
+    <td mat-cell *matCellDef="let element"> {{element.milesPerHour}} </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+  <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+</table>
+<a [routerLink]="" (click)="refresh()">Refresh</a>
