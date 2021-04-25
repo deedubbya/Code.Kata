@@ -33,10 +33,10 @@ Expected Output:
 
 ### Solution Structure
 * Solution is organized into 4 seperate projects
-* * Code.Kata.DataAccess - Entity Framework and Data Access Layer
-* * Code.Kata.Repositories - Accesses database through DataAccess project.  These two projects could have been combined.
-* * Code.Kata.Services - Web Services and business logic layer.  Business Logic Layer could have been put into it's own project seperate of services.
-* * Code.Kata.WebApp - Consists of Angular web application user interface.
+  * Code.Kata.DataAccess - Entity Framework and Data Access Layer
+  * Code.Kata.Repositories - Accesses database through DataAccess project.  These two projects could have been combined.
+  * Code.Kata.Services - Web Services and business logic layer.  Business Logic Layer could have been put into it's own project seperate of services.
+  * Code.Kata.WebApp - Consists of Angular web application user interface.
 
 ### Built With
 
