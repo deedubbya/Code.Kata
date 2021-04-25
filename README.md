@@ -3,6 +3,7 @@
 This angular project consists of 2 pages.  One for uploading a file and adding records to a database, and another for displaying database contents into a table.
 
 ## Description
+
 The code will process an input file.
 Each line in the input file will start with a command. There are two possible commands.
 The first command is Driver, which will register a new Driver in the app. Example: Driver
@@ -27,6 +28,22 @@ Expected Output:
 * Alex 42 miles @ 34mph
 * Dan 39 miles @ 47mph
 * Bob 0 miles
+
+## About The Project
+
+### Solution Structure
+* Solution is organized into 4 seperate projects
+** Code.Kata.DataAccess - Entity Framework and Data Access Layer
+** Code.Kata.Repositories - Accesses database through DataAccess project.  These two projects could have been combined.
+** Code.Kata.Services - Web Services and business logic layer.  Business Logic Layer could have been put into it's own project seperate of services.
+** Code.Kata.WebApp - Consists of Angular web application user interface.
+
+### Built With
+
+* [.NET Core 3.1](https://dotnet.microsoft.com/download)
+* [Angular](https://angular.io)
+* [Bootstrap](https://getbootstrap.com)
+
 
 ## Getting Started
 
