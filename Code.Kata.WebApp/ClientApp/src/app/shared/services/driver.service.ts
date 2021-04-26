@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Constants } from '../../config/constants';
 import { DriverReportData } from '../models/driver-report-data';
 
 @Injectable({
@@ -7,9 +8,9 @@ import { DriverReportData } from '../models/driver-report-data';
 })
 export class DriverService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private constants: Constants) { }
 
   public GetDriverReportData() {
-    return this.http.get<DriverReportData[]>("https://localhost:44391/api/Driver/GetDriverReportData")
+    return this.http.get<DriverReportData[]>(this.constants.API_ENDPOINT + "/Driver/GetDriverReportData")
   }
 }

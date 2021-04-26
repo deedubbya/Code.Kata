@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, Input, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MatSort } from '@angular/material/sort';
-import { DriverService } from '../services/driver.service';
+import { DriverService } from '../shared/services/driver.service';
 import { MatTableDataSource } from '@angular/material';
 
 
@@ -16,12 +16,10 @@ export class DriverReportsComponent implements AfterViewInit {
   @ViewChild(MatSort, {static: false}) sort: MatSort;
   requiredFileType: string;
 
-  driverService:DriverService;
   reportResponse = new MatTableDataSource();
   columnsToDisplay: string[] = ['driver', 'miles', 'milesMph'];
 
-  constructor(private http: HttpClient) {
-    this.driverService = new DriverService(http);
+  constructor(private driverService: DriverService) {
     this.displayData();
   }
 

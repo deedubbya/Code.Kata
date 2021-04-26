@@ -2,8 +2,8 @@ import { Component, Input } from '@angular/core';
 import { HttpClient, HttpEventType } from '@angular/common/http';
 import { Subscription } from 'rxjs';
 import { finalize, map } from 'rxjs/operators';
-import { FileService } from '../services/file.service';
-import { FileUploadResponse } from '../models/file-upload-response';
+import { FileService } from '../shared/services/file.service';
+import { FileUploadResponse } from '../shared/models/file-upload-response';
 
 @Component({
   selector: 'update-driver-database',
@@ -19,12 +19,10 @@ export class UpdateDriverDatabaseComponent {
   isUploading: boolean;
   isUploaded: boolean;
   uploadProgress: number;
-  fileService: FileService;
   uploadResponse: FileUploadResponse | undefined;
   uploadSub: Subscription;
 
-  constructor(private http: HttpClient) {
-    this.fileService = new FileService(http);
+  constructor(private fileService: FileService) {
     this.uploadResponse = new FileUploadResponse();
   }
 

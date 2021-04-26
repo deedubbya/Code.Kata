@@ -7,9 +7,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar'
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-
 import { AppComponent } from './app.component';
-import { NavMenuComponent } from './nav-menu/nav-menu.component';
+import { NavMenuComponent } from './shared/nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { UpdateDriverDatabaseComponent } from './update-driver-database/update-driver-database.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
